@@ -1,22 +1,14 @@
-const table = document.querySelector(".table")
-const cell = document.querySelectorAll(".cell")
+const divs = document.querySelectorAll(".wrapper div")
+const colors = ["yellow", "green", "blue", "purple", "red", "aquamarine"]
+const text = ["Тут вам не здесь", "Тут вам не там", "Мы это не вы", "Их это не наш", "Я это не ты", "Наш значит не ваш"]
 
-
-
-function fillRed(){
-    cell.forEach(squareRed => {
-        return squareRed.addEventListener("click", () => {
-            squareRed.style.backgroundColor = "red"
-        })
+divs.forEach((item) =>
+    item.addEventListener("click", () => {
+        divs.forEach(el => el.removeAttribute("class"))
+        const randomNumber = Math.floor(Math.random() * 6)
+        item.classList.add(colors[randomNumber])
+        item.innerText = text[randomNumber]
     })
-}
-fillRed()
+)
 
-//
-// if (cell.style.backgroundColor === "red"){
-//     cell.forEach(squareTransparent => {
-//         return squareTransparent.addEventListener("click", () => {
-//             squareTransparent.style.backgroundColor = "transparent"
-//         })
-//     })
-// }
+
