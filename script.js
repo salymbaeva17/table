@@ -19,8 +19,9 @@ const text = ["Тут вам не здесь", "Тут вам не там", "М�
 wrapper.addEventListener("click", (e) => {
     divs.forEach(el => el.removeAttribute("class"))
     const randomNumber = Math.floor(Math.random() * 6)
+    const randomNum = Math.floor(Math.random() * 6)
     e.target.classList.add(colors[randomNumber])
-    e.target.innerText = text[randomNumber]
+    e.target.innerText = text[randomNum]
 })
 
 
